@@ -1,0 +1,55 @@
+  .navbar 
+  {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    background: #f3f3f3;
+    width: 100%;
+  }
+  .navbar-header {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .navbar-login{
+    margin-left: auto;
+    margin-right: 20px;
+    color:black;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 15px;
+  }
+  .navbar-registration,
+  .navbar-logout
+  {
+    margin-right: 80px;
+    color:black;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 15px;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logout{
+    margin-left: auto;
+  }
+
+  .navbar-logout:hover,
+  .navbar-login:hover,
+  .navbar-registration:hover
+  {
+    background-color: #e2e2e2;
+  }
+ 
+  a 
+  { 
+    text-decoration: none; 
+  }

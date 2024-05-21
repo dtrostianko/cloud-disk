@@ -1,0 +1,32 @@
+.filelist {
+    margin: 30px 0;
+  }
+  .filelist-header {
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .filelist-name {
+    grid-column-start: 2;
+  }
+  .filelist-data {
+    grid-column-start: 5;
+    justify-self: center;
+  }
+  .filelist-size {
+    grid-column-start: 6;
+    justify-self: center;
+  }
+
+  p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filetiles{
+    display: flex;
+    flex-wrap: wrap;
+  }

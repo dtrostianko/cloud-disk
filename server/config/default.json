@@ -1,0 +1,6 @@
+{
+    "serverPort": 5000,
+    "dbUrl":"mongodb+srv://Cloud:6kCFHK00IYJ5Ph7M@cloud.mdbwwjb.mongodb.net/?retryWrites=true&w=majority&appName=Cloud",
+    "secretKey":"SecretKey1",
+    "filePath": "D:\\project\\cloud-disk\\server\\files"
+}
