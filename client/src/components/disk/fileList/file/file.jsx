@@ -16,7 +16,6 @@ import exelIcon from '../../../../assets/img/xls.png';
 import txtIcon from '../../../../assets/img/txt-file.png';
 import zipIcon from '../../../../assets/img/zip.png';
 import pptIcon from '../../../../assets/img/ppt.png';
-import { downloadFile } from '../../../../actions/file';
 import { deleteFile } from '../../../../actions/file';
 
 const File = ({ file }) => {
@@ -29,11 +28,6 @@ const File = ({ file }) => {
             dispatch(setCurrentDir(file._id));
         }
     }
-    function downloadClickHandler(e) {
-        e.stopPropagation()
-        downloadFile(file)
-    }
-
     function deleteClickHandler(e) {
         e.stopPropagation()
         dispatch(deleteFile(file))
@@ -46,7 +40,7 @@ const File = ({ file }) => {
                 <div className="file-name">{file.name}</div>
                 <div className="file-data">{file.data ? file.data.slice(0, 10) : ''}</div>
                 <div className="file-size">{file.size}</div>
-                {file.type !== 'dir' && <button onClick={(e) => downloadClickHandler(e)} className="file-button download-button"><img src={download} alt="" className='download-button-img' /></button>}
+                <button className="file-button download-button"><img src={download} alt="" className='download-button-img' /></button>
                 <button className="file-button delete-button"><img src={detele} alt="" className='delete-button-img' /></button>
             </div>
         );
@@ -57,7 +51,7 @@ const File = ({ file }) => {
                 <img src={file.type === 'dir' ? folder :(file.name.endsWith ('.JPG')|| file.name.endsWith('.png')|| file.name.endsWith('.svg') ? imageIcon  :(file.name.endsWith ('.pptx')|| file.name.endsWith('.ppt') ? pptIcon:(file.name.endsWith ('.zip')|| file.name.endsWith('.rar')|| file.name.endsWith('.ZIP') ? zipIcon:(file.name.endsWith ('.txt') ? txtIcon :(file.name.endsWith ('.xlsm')|| file.name.endsWith('.xls') || file.name.endsWith('.xlsx')? exelIcon :(file.name.endsWith ('.docx') ? docIcon:(file.name.endsWith ('.mp4') ? videoIcon: file.type === 'archive' ? archiveIcon : (file.name.endsWith ('.pdf') ? pdfIcon : (file.name.endsWith('.mp3') || file.name.endsWith('.wav') || file.name.endsWith('.ogg') ? audioIcon : filelogo)))))))))} alt="" className="file-img-tiles" />
                 <div className="file-name-tiles">{file.name}</div>
                 <div className="file-tiles-buttons">
-                    {file.type !== 'dir' && <button onClick={(e) => downloadClickHandler(e)} className="file-button-tiles download-button-tiles"><img src={download} alt="" className='download-button-img' /></button>}
+                   <button className="file-button-tiles download-button-tiles"><img src={download} alt="" className='download-button-img' /></button>
                     <button onClick={(e)=>deleteClickHandler(e)} className="file-button-tiles delete-button-tiles"><img src={detele} alt="" className='delete-button-img' /></button>
                 </div>
             </div>
