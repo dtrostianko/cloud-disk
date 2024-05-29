@@ -1,259 +1,248 @@
-.main-search
-{
+.main-search {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 30px;
+}
+
+.main-search-row {
+  display: inline-flex;
+  background-color: #e2e2e2;
+  border-radius: 30px;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.search-btn,
+.search-txt {
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #e2e2e2;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.search-btn:hover {
+  background: #d6d6d6;
+}
+
+.search-txt {
+  background-color: #e2e2e2;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  margin: auto;
+  font-size: 20px;
+  margin-left: 15px;
+  width: 90%;
+}
+.main-administration-btn {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 4%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.disk-back {
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #e2e2e2;
+  border: none;
+  margin-right: 2%;
+}
+.back-icon {
+  width: 20px;
+  height: 15px;
+}
+.disk-back:hover {
+  background: #bdbdbd;
+}
+.main-dropdown-type {
+  position: relative;
+  display: inline-block;
+}
+.drop-area {
+    width: 100%;
+    height: 500px;
+    border: 2px dashed #cccccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
     display: flex;
-    justify-content: center;
-    margin: 20px 0 30px;
-}
-
-.main-search-row
-{
-    display: inline-flex;
-    background-color: #e2e2e2;
-    border-radius: 30px;
-    position: relative;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.search-btn, .search-txt
-{
-    border: none;
-    outline: none;
-}
-
-.search-btn
-{
-    background-color: #e2e2e2;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-}
-
-.search-btn:hover
-{
-    background:#d6d6d6;
-}
-
-.search-txt
-{
-    background-color: #e2e2e2;
     align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    margin: auto;
-    font-size: 20px;
-    margin-left: 15px;
-    width: 90%;
-}
-.main-administration-btn
-{
-    display: flex;
-    margin-top: 20px;
-    margin-left: 4%;
-    align-items: center;  
-    margin-bottom: 20px;
-
-}
-.disk-back{
-    padding: 10px 20px 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    background: #e2e2e2;
-    border: none;
-    margin-right: 2%;
-}
-.back-icon{
-    width: 20px;
-    height: 15px;
-}
-.disk-back:hover
-{
-    background: #bdbdbd;
-}
-.main-dropdown-type
-{
-    position: relative;
-    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.dropdown-type-btn, 
+.dropdown-type-btn,
 .dropdown-lastchanges-btn,
-.dropdown-dateadded-btn
-{
-    padding: 10px 25px 10px 25px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    background: #e2e2e2;
-    border: none;
+.dropdown-dateadded-btn {
+  padding: 10px 25px 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #e2e2e2;
+  border: none;
 }
 
-.dropdown-type-btn:hover, 
-.dropdown-lastchanges-btn:hover, 
-.dropdown-dateadded-btn:hover
-{
-    background: #d3d3d3;    
+.dropdown-type-btn:hover,
+.dropdown-lastchanges-btn:hover,
+.dropdown-dateadded-btn:hover {
+  background: #d3d3d3;
 }
 
 .dropdown-type-content,
 .dropdown-lastchanges-content,
-.dropdown-dateadded-content
-{
-    display: none;
-    position: absolute;
-    margin: 0;
-    box-shadow: 0px 0px 10px 1px #000000bf;
-    z-index: 1000;
-       
+.dropdown-dateadded-content {
+  display: none;
+  position: absolute;
+  margin: 0;
+  box-shadow: 0px 0px 10px 1px #000000bf;
+  z-index: 1000;
 }
 .dropdown-type-content a,
 .dropdown-lastchanges-content a,
-.dropdown-dateadded-content a
-{
-    display: flex;
-    color: black;
-    background: white;
-    text-decoration: none;
-    padding: 10px 40px 7px 15px;
-    font-family: 'Courier New', Courier, monospace;
-    white-space: nowrap;
+.dropdown-dateadded-content a {
+  display: flex;
+  color: black;
+  background: white;
+  text-decoration: none;
+  padding: 10px 40px 7px 15px;
+  font-family: "Courier New", Courier, monospace;
+  white-space: nowrap;
 }
 
 .dropdown-type-content a:hover,
 .dropdown-lastchanges-content a:hover,
-.dropdown-dateadded-content a:hover
-{
-    background-color: #bdbdbd;
+.dropdown-dateadded-content a:hover {
+  background-color: #bdbdbd;
 }
 
-.main-dropdown-type:hover .dropdown-type-content
-{
-    display: block;
+.main-dropdown-type:hover .dropdown-type-content {
+  display: block;
 }
 
-.main-dropdown-lastchanges
-{
-    position: relative;
-    display: inline-block;
-    margin-left: 2%;
+.main-dropdown-lastchanges {
+  position: relative;
+  display: inline-block;
+  margin-left: 2%;
 }
 
-.main-dropdown-lastchanges:hover .dropdown-lastchanges-content
-{
-    display: block;
+.main-dropdown-lastchanges:hover .dropdown-lastchanges-content {
+  display: block;
 }
 
-.main-dropdown-dateadded
-{
-    position: relative;
-    display: inline-block;
-    margin-left: 2%;
+.main-dropdown-dateadded {
+  position: relative;
+  display: inline-block;
+  margin-left: 2%;
 }
 
-.main-dropdown-dateadded:hover .dropdown-dateadded-content
-{
-    display: block;
+.main-dropdown-dateadded:hover .dropdown-dateadded-content {
+  display: block;
 }
 
-.main-createfolder
-{
-    margin-left: 35%;
+.main-createfolder {
+  margin-left: 35%;
 }
 
-.main-download-
-{
-    margin-left: 1%;
+.main-download- {
+  margin-left: 1%;
 }
 
 .main-createfolder-btn,
-.disk-upload-label
-{
-    cursor: pointer;
-    padding: 10px 25px 10px 25px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-    background:#e2e2e2;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif
+.disk-upload-label {
+  cursor: pointer;
+  padding: 10px 25px 10px 25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background: #e2e2e2;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .main-createfolder-btn:hover,
 .main-download-btn:hover,
-.disk-upload-label:hover
-{
-    background: #bdbdbd;
+.disk-upload-label:hover {
+  background: #bdbdbd;
 }
 
 .popup {
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .popup-content {
-    width: 400px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-  }
-  .popup-create {
-    align-self: flex-end;
-  }
-  .popup-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  .popup input {
-    margin: 20px 0px;
-  }
+.popup-content {
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.popup-create {
+  align-self: flex-end;
+}
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+}
+.popup input {
+  margin: 20px 0px;
+}
 
-  .disk-upload-input{
-    display: none;
-  }
+.disk-upload-input {
+  display: none;
+}
 
-  .disk-upload{
-    margin-left: 1%;
-  }
-  
-  .disk-tiles{
-    height: 17px;
-    width: 20px;
-    border: none;
-    outline:none;
-    cursor: pointer;
-    background: no-repeat center center;
-    background-size: contain;
-  }
+.disk-upload {
+  margin-left: 1%;
+}
 
-  .disk-list{
-    height: 20px;
-    width: 20px;
-    border: none;
-    outline:none;
-    cursor: pointer;
-    background: no-repeat center center;
-    background-size: contain;
-  }
+.disk-tiles {
+  height: 17px;
+  width: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: no-repeat center center;
+  background-size: contain;
+}
 
-  .disk-list{
-    background-image: url("../../assets/img/view-list.png");
-    margin-left: 10px;
-  }
-  .disk-tiles{
-    background-image: url("../../assets/img/grid.png");
-    margin-left: 60px;
-  }
+.disk-list {
+  height: 20px;
+  width: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: no-repeat center center;
+  background-size: contain;
+}
 
-  
+.disk-list {
+  background-image: url("../../assets/img/view-list.png");
+  margin-left: 10px;
+}
+.disk-tiles {
+  background-image: url("../../assets/img/grid.png");
+  margin-left: 60px;
+}
+

@@ -41,7 +41,7 @@ const File = ({ file }) => {
                 <div className="file-data">{file.data ? file.data.slice(0, 10) : ''}</div>
                 <div className="file-size">{file.size}</div>
                 <button className="file-button download-button"><img src={download} alt="" className='download-button-img' /></button>
-                <button className="file-button delete-button"><img src={detele} alt="" className='delete-button-img' /></button>
+                <button onClick={(e)=>deleteClickHandler(e)} className="file-button delete-button"><img src={detele} alt="" className='delete-button-img' /></button>
             </div>
         );
     }  
