@@ -26,12 +26,17 @@ import {
   setFileView,
 } from "../../reducers/fileReducer";
 import backIcon from "../../assets/img/back-arrow.png";
+import {searchFiles} from "../../actions/file";
+import { showLoader } from "../../reducers/appReducer";
 
 const Disk = () => {
   const dispatch = useDispatch();
   const currentDir = useSelector((state) => state.files.currentDir);
+  const loader = useSelector((state) => state.files.loader);
   const dirStack = useSelector((state) => state.files.dirStack);
   const [dragEnter, setDragEnter] = useState(false);
+  const [searchName, setSearchName] = useState('')
+    const [searchTimeout, setSearchTimeout] = useState(false)
 
   useEffect(() => {
     dispatch(getFiles(currentDir));
@@ -70,16 +75,34 @@ const Disk = () => {
         setDragEnter(false)
     }
 
+    if(loader){
+      return(
+        <div className="loader">
+          <div class="lds-default"></div>
+        </div>
+      )
+    }
+    function searchChangeHandler(e) {
+      setSearchName(e.target.value)
+      if (searchTimeout != false) {
+          clearTimeout(searchTimeout)
+      }
+      dispatch(showLoader())
+      if(e.target.value != '') {
+          setSearchTimeout(setTimeout((value) => {
+              dispatch(searchFiles(value));
+          }, 500, e.target.value))
+      } else {
+          dispatch(getFiles(currentDir))
+      }
+  }
   return  (!dragEnter ?
     <div className="disk" onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
       <div className="main-search">
         <form className="main-search-row">
-          <button className="search-btn">
-            <i className="fasearch">
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </i>
-          </button>
           <input
+            value={searchName}
+            onChange={e => searchChangeHandler(e)}
             className="search-txt"
             type="text"
             name=""
