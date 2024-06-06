@@ -5,18 +5,6 @@ import FileList from "./fileList/FileList";
 import "../disk/disk.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
-  faFile,
-  faClock,
-  faImage,
-  faFileAlt,
-  faFileAudio,
-  faFileVideo,
-  faFilePdf,
-  faFilePowerpoint,
-  faTable,
-  faFolder,
-  faQuestionCircle,
   faFolderPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import Popup from "./Popup";
@@ -36,11 +24,12 @@ const Disk = () => {
   const dirStack = useSelector((state) => state.files.dirStack);
   const [dragEnter, setDragEnter] = useState(false);
   const [searchName, setSearchName] = useState('')
-    const [searchTimeout, setSearchTimeout] = useState(false)
+  const [searchTimeout, setSearchTimeout] = useState(false)
+  const [sort, setSort] = useState('date')
 
   useEffect(() => {
-    dispatch(getFiles(currentDir));
-  }, [currentDir]);
+    dispatch(getFiles(currentDir, sort));
+  }, [currentDir, sort]);
 
   function showPopupHandler() {
     dispatch(setPopupDisplay("flex"));
@@ -114,83 +103,11 @@ const Disk = () => {
         <button className="disk-back" onClick={() => backClickHandler()}>
           <img src={backIcon} alt="" className="back-icon" />
         </button>
-        <div className="main-dropdown-type">
-          <button className="dropdown-type-btn">
-            <FontAwesomeIcon icon={faFile} /> Тип
-          </button>
-          <div className="dropdown-type-content">
-            <a href="#">
-              <FontAwesomeIcon icon={faClock} className="content-all" />
-              Все типы
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faImage} className="content-img" />
-              Изображение
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFileAlt} className="content-document" />
-              Документы
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFileAudio} className="content-audio" />
-              Аудио
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFileVideo} className="content-video" />
-              Видео
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFilePdf} className="content-pdf" />
-              PDF
-            </a>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faFilePowerpoint}
-                className="content-presentation"
-              />
-              Презентации
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faTable} className="content-table" />
-              Таблицы
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFolder} className="content-folder" />
-              Папки
-            </a>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="content-other"
-              />
-              Другие
-            </a>
-          </div>
-        </div>
-        <div className="main-dropdown-lastchanges">
-          <button className="dropdown-lastchanges-btn">
-            Последнее изменение
-          </button>
-          <div className="dropdown-lastchanges-content">
-            <a href="#">Сегодня</a>
-            <a href="#">Последние 7 дней</a>
-            <a href="#">Последние 30 дней</a>
-            <a href="#">Текущий год</a>
-            <a href="#">Последний год</a>
-            <a href="#">Позже</a>
-          </div>
-        </div>
-        <div className="main-dropdown-dateadded">
-          <button className="dropdown-dateadded-btn">Дата добавления</button>
-          <div className="dropdown-dateadded-content">
-            <a href="#">Сегодня</a>
-            <a href="#">Последние 7 дней</a>
-            <a href="#">Последние 30 дней</a>
-            <a href="#">Текущий год</a>
-            <a href="#">Последний год</a>
-            <a href="#">Позже</a>
-          </div>
-        </div>
+       <select value={sort} onChange={(e)=>setSort(e.target.value)} className="disk-select">
+        <option value="name">По имени</option>
+        <option value="type">По типу</option>
+        <option value="date">По дате</option>
+       </select>
         <div className="main-createfolder">
           <button onClick={showPopupHandler} className="main-createfolder-btn">
             <FontAwesomeIcon icon={faFolderPlus} />

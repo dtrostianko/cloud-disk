@@ -63,29 +63,9 @@
 .disk-back:hover {
   background: #bdbdbd;
 }
-.main-dropdown-type {
-  position: relative;
-  display: inline-block;
-}
-.drop-area {
-    width: 100%;
-    height: 500px;
-    border: 2px dashed #cccccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #000000;
-    font-size: 16px;
-    transition: background-color 0.3s, border-color 0.3s;
-}
 
-.dropdown-type-btn,
-.dropdown-lastchanges-btn,
-.dropdown-dateadded-btn {
-  padding: 10px 25px 10px 25px;
+.disk-select{
+  padding: 10px 20px 10px 20px;
   border-radius: 30px;
   cursor: pointer;
   font-size: 15px;
@@ -93,65 +73,8 @@
   border: none;
 }
 
-.dropdown-type-btn:hover,
-.dropdown-lastchanges-btn:hover,
-.dropdown-dateadded-btn:hover {
-  background: #d3d3d3;
-}
-
-.dropdown-type-content,
-.dropdown-lastchanges-content,
-.dropdown-dateadded-content {
-  display: none;
-  position: absolute;
-  margin: 0;
-  box-shadow: 0px 0px 10px 1px #000000bf;
-  z-index: 1000;
-}
-.dropdown-type-content a,
-.dropdown-lastchanges-content a,
-.dropdown-dateadded-content a {
-  display: flex;
-  color: black;
-  background: white;
-  text-decoration: none;
-  padding: 10px 40px 7px 15px;
-  font-family: "Courier New", Courier, monospace;
-  white-space: nowrap;
-}
-
-.dropdown-type-content a:hover,
-.dropdown-lastchanges-content a:hover,
-.dropdown-dateadded-content a:hover {
-  background-color: #bdbdbd;
-}
-
-.main-dropdown-type:hover .dropdown-type-content {
-  display: block;
-}
-
-.main-dropdown-lastchanges {
-  position: relative;
-  display: inline-block;
-  margin-left: 2%;
-}
-
-.main-dropdown-lastchanges:hover .dropdown-lastchanges-content {
-  display: block;
-}
-
-.main-dropdown-dateadded {
-  position: relative;
-  display: inline-block;
-  margin-left: 2%;
-}
-
-.main-dropdown-dateadded:hover .dropdown-dateadded-content {
-  display: block;
-}
-
 .main-createfolder {
-  margin-left: 35%;
+  margin-left: 60%;
 }
 
 .main-download- {
